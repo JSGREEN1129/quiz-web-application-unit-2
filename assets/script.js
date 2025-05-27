@@ -298,10 +298,21 @@ function submitScore() {
 
 // Reset timer and user state when modal is closed
 const modalElement = document.querySelector('#quizModal');
-modalElement.addEventListener('hidden.bs.modal', () => {
-  if (timerInterval) clearInterval(timerInterval);
-  timeLeft = 15;
-  totalTimeSpent = 0;
-  document.getElementById('timerDisplay').innerHTML = `<i class="fa-solid fa-stopwatch"></i> Time left: ${timeLeft}s`;
-  document.getElementById('submitBtn').disabled = false;
-});
+if (modalElement) {
+  modalElement.addEventListener('hidden.bs.modal', () => {
+    if (timerInterval) clearInterval(timerInterval);
+    timeLeft = 15;
+    totalTimeSpent = 0;
+    
+    const timerDisplay = document.getElementById('timerDisplay');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    if (timerDisplay) {
+      timerDisplay.innerHTML = `<i class="fa-solid fa-stopwatch"></i> Time left: ${timeLeft}s`;
+    }
+    
+    if (submitBtn) {
+      submitBtn.disabled = false;
+    }
+  });
+}
