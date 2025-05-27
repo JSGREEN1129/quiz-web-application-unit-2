@@ -59,18 +59,13 @@ let score = 0;
 let timeLeft = 15; // 15 seconds per question
 let totalTimeSpent = 0; // Track total time spent on quiz (in seconds)
 let timerInterval = null; // To store the timer interval
-let currentUser = null; // Track logged-in user
-
-// Initialize users from localStorage
-let users = JSON.parse(localStorage.getItem('users')) || {};
-let scores = JSON.parse(localStorage.getItem('scores')) || [];
 
 function startQuiz(difficulty) {
   currentDifficulty = difficulty;
   currentQuestionIndex = 0;
   score = 0;
-  timeLeft = 15;
-  totalTimeSpent = 0;
+  timeLeft = 15; // Reset timer to 15 seconds
+  totalTimeSpent = 0; // Reset total time
 
   document.getElementById('quizContent').innerHTML = '';
 
@@ -81,7 +76,7 @@ function startQuiz(difficulty) {
   const submitBtn = document.getElementById('submitBtn');
   submitBtn.textContent = 'Submit Answer';
   submitBtn.classList.remove('d-none');
-  submitBtn.disabled = false;
+  submitBtn.disabled = false; // Ensure button is enabled
   submitBtn.removeEventListener('click', tryAgain);
   submitBtn.addEventListener('click', submitAnswer);
 
@@ -109,9 +104,12 @@ function loadQuestion() {
 
   if (!question) {
     // Quiz completed
-    const maxTime = totalQuestions * 15;
+    // Calculate progress bar percentage (inverted: less time used = fuller bar)
+    const maxTime = totalQuestions * 15; // Maximum possible time (15s per question)
     const timeUsedPercentage = (totalTimeSpent / maxTime) * 100;
-    const timeRemainingPercentage = 100 - timeUsedPercentage;
+    const timeRemainingPercentage = 100 - timeUsedPercentage; // Fuller bar for less time used
+
+    // Format total time for display
     const minutes = Math.floor(totalTimeSpent / 60);
     const seconds = totalTimeSpent % 60;
     const timeFormatted = minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
@@ -122,29 +120,30 @@ function loadQuestion() {
       <div class="progress mt-2" style="height: 20px;">
         <div class="progress-bar bg-success" role="progressbar" style="width: ${timeRemainingPercentage}%;" 
              aria-valuenow="${timeRemainingPercentage}" aria-valuemin="0" aria-valuemax="100">
-          Time Efficiency: ${timeFormatted}
+          It took you: ${timeFormatted}
         </div>
       </div>
-      <button type="button" class="btn btn-success mt-3 mb-3 me-2" onclick="submitScore()">Submit Score</button>
-      ${score === totalQuestions ? '<p class="text-success fw-bold">Perfect Score! 🎉</p>' : ''}
     `;
+    // Stop the timer
     clearInterval(timerInterval);
     timerDisplay.innerHTML = `<i class="fa-solid fa-stopwatch"></i> Quiz finished`;
 
-    // Keep Try Again button in modal footer
+    // Change Submit button to Try Again if user does not get all questions correct
     if (score < totalQuestions) {
       submitBtn.textContent = 'Try Again';
-      submitBtn.classList.remove('d-none');
       submitBtn.removeEventListener('click', submitAnswer);
       submitBtn.addEventListener('click', tryAgain);
     } else {
+      // Perfect score: hide try again button and trigger confetti
       submitBtn.classList.add('d-none');
+      quizContent.innerHTML += `<p class="text-success fw-bold">Perfect Score! 🎉</p>`;
       triggerConfetti();
     }
 
     return;
   }
 
+  // Load next question
   quizContent.innerHTML = `
     <h4>Question ${currentQuestionIndex + 1}: ${question.question}</h4>
     <form id="quizForm">
@@ -157,9 +156,11 @@ function loadQuestion() {
     </form>
   `;
 
+  // Ensure submit button is visible and set to Submit Answer
   submitBtn.textContent = 'Submit Answer';
   submitBtn.classList.remove('d-none');
 
+  // Start the timer
   timerInterval = setInterval(() => {
     timeLeft--;
     timerDisplay.innerHTML = `<i class="fa-solid fa-stopwatch"></i> Time left: ${timeLeft}s`;
@@ -168,14 +169,17 @@ function loadQuestion() {
       clearInterval(timerInterval);
       timerDisplay.innerHTML = `<i class="fa-solid fa-stopwatch"></i> Time’s up!`;
       submitBtn.disabled = true;
+
+      // Update total time spent (15 seconds since time ran out)
       totalTimeSpent += 15;
 
+      // Automatically move to the next question after a brief delay
       setTimeout(() => {
         currentQuestionIndex++;
         loadQuestion();
-      }, 1000);
+      }, 1000); // 1-second delay before moving to the next question
     }
-  }, 1000);
+  }, 1000); // Update every second
 }
 
 function submitAnswer() {
@@ -187,18 +191,27 @@ function submitAnswer() {
     return;
   }
 
+  // Check if the answer is correct
   const correctAnswer = questions[currentDifficulty][currentQuestionIndex].answer;
   if (selectedAnswer.value === correctAnswer) {
     score++;
   }
 
+  // Update total time spent (15 seconds minus remaining time)
   totalTimeSpent += (15 - timeLeft);
+
+  // Clear the timer
   clearInterval(timerInterval);
+
+  // Move to the next question
   currentQuestionIndex++;
+
+  // Load the next question or show results
   loadQuestion();
 }
 
 function tryAgain() {
+  // Clear the timer
   if (timerInterval) clearInterval(timerInterval);
   startQuiz(currentDifficulty);
 }
@@ -210,7 +223,7 @@ function triggerConfetti() {
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#28a745', '#ffffff', '#ffd700'],
+        colors: ['#28a745', '#ffffff', '#ffd700'], // Bootstrap success green, white, gold
         duration: 3000
       });
       console.log('Confetti animation triggered successfully');
@@ -224,95 +237,12 @@ function triggerConfetti() {
   }
 }
 
-function handleRegister() {
-  const username = document.getElementById('registerUsername').value.trim();
-  const password = document.getElementById('registerPassword').value;
-  const errorElement = document.getElementById('registerError');
-
-  if (!username || !password) {
-    errorElement.textContent = 'Please fill in all fields.';
-    errorElement.classList.remove('d-none');
-    return;
-  }
-
-  if (users[username]) {
-    errorElement.textContent = 'Username already exists.';
-    errorElement.classList.remove('d-none');
-    return;
-  }
-
-  users[username] = { password }; // In a real app, hash the password
-  localStorage.setItem('users', JSON.stringify(users));
-  errorElement.classList.add('d-none');
-  alert('Registration successful! Please log in.');
-  document.getElementById('login-tab').click();
-  document.getElementById('registerForm').reset();
-}
-
-function handleLogin() {
-  const username = document.getElementById('loginUsername').value.trim();
-  const password = document.getElementById('loginPassword').value;
-  const errorElement = document.getElementById('loginError');
-
-  if (!username || !password) {
-    errorElement.textContent = 'Please fill in all fields.';
-    errorElement.classList.remove('d-none');
-    return;
-  }
-
-  if (!users[username] || users[username].password !== password) {
-    errorElement.textContent = 'Invalid username or password.';
-    errorElement.classList.remove('d-none');
-    return;
-  }
-
-  currentUser = username;
-  errorElement.classList.add('d-none');
-  document.getElementById('loginForm').reset();
-  bootstrap.Modal.getInstance(document.getElementById('authModal')).hide();
-  submitScore();
-}
-
-function submitScore() {
-  if (!currentUser) {
-    const authModal = new bootstrap.Modal(document.getElementById('authModal'));
-    authModal.show();
-    return;
-  }
-
-  const scoreEntry = {
-    username: currentUser,
-    difficulty: currentDifficulty,
-    score: score,
-    totalQuestions: questions[currentDifficulty].length,
-    timeTaken: totalTimeSpent,
-    timestamp: new Date().toISOString()
-  };
-  scores.push(scoreEntry);
-  localStorage.setItem('scores', JSON.stringify(scores));
-
-  document.getElementById('quizContent').innerHTML += `
-    <p class="text-success mt-3">Score submitted successfully for ${currentUser}!</p>
-  `;
-}
-
-// Reset timer and user state when modal is closed
-const modalElement = document.querySelector('#quizModal');
-if (modalElement) {
-  modalElement.addEventListener('hidden.bs.modal', () => {
-    if (timerInterval) clearInterval(timerInterval);
-    timeLeft = 15;
-    totalTimeSpent = 0;
-    
-    const timerDisplay = document.getElementById('timerDisplay');
-    const submitBtn = document.getElementById('submitBtn');
-    
-    if (timerDisplay) {
-      timerDisplay.innerHTML = `<i class="fa-solid fa-stopwatch"></i> Time left: ${timeLeft}s`;
-    }
-    
-    if (submitBtn) {
-      submitBtn.disabled = false;
-    }
-  });
-}
+// Reset timer when modal is closed
+const modalElement = document.querySelector('.modal'); // Adjust selector to your modal
+modalElement.addEventListener('hidden.bs.modal', () => {
+  if (timerInterval) clearInterval(timerInterval);
+  timeLeft = 15;
+  totalTimeSpent = 0; // Reset total time
+  document.getElementById('timerDisplay').innerHTML = `<i class="fa-solid fa-stopwatch"></i> Time left: ${timeLeft}s`;
+  document.getElementById('submitBtn').disabled = false;
+});
