@@ -25,3 +25,14 @@
   z-index: 9999; /* Higher than Bootstrap modal (1050) and navbar */
   pointer-events: none; /* Allows clicks to pass through */
 }
+
+#timerDisplay i {
+    margin-right: 8px;
+  }
+
+  .progress {
+  height: 25px;
+}
+.progress-bar {
+  font-size: 14px;
+}
