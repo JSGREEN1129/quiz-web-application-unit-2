@@ -76,12 +76,55 @@
     </div>
   </div>
 
-<!-- Bootstrap Modal -->
+
+
+<!-- Card 2 - average -->
+  <div class="col-md-4 mb-4 text-center">
+    <div class="card rounded-4" style="width: 100%;">
+      <img src="assets/images/general-knowledge-average.webp" class="card-img-top rounded-top-4 border border-success" alt="General Knowledge" style="height: 300px; object-fit: cover;">
+      <div class="card-body rounded-bottom-4 border border-success">
+        <h3 class="card-title text-success">General Knowledge</h3>
+        <p class="card-text"><strong><span class="text-success">Average</span></strong> - Test your trivia across a variety of topics!</p>
+        <div class="star-rating mb-3 text-success" title="Average Difficulty">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </div>
+        <!-- Button to trigger the modal -->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#quizModal" onclick="startQuiz('average')">
+          Start Quiz
+        </button>
+      </div>
+    </div>
+  </div>
+
+<!-- Card 3 - hard -->
+  <div class="col-md-4 mb-4 text-center">
+    <div class="card rounded-4" style="width: 100%;">
+      <img src="assets/images/general-knowledge-hard.webp" class="card-img-top rounded-top-4 border border-success" alt="General Knowledge" style="height: 300px; object-fit: cover;">
+      <div class="card-body rounded-bottom-4 border border-success">
+        <h3 class="card-title text-success">General Knowledge</h3>
+        <p class="card-text"><strong><span class="text-success">Hard</span></strong> - Test your trivia across a variety of topics!</p>
+        <div class="star-rating mb-3 text-success" title="Hard Difficulty">
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+          <i class="bi bi-star-fill"></i>
+        </div>
+        <!-- Button to trigger the modal -->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#quizModal" onclick="startQuiz('hard')">
+          Start Quiz
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Modal -->
 <div class="modal fade" id="quizModal" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title text-success fw-bold" id="quizModalLabel">General Knowledge Quiz - Easy</h2>
+        <h2 class="modal-title text-success fw-bold" id="quizModalLabel">General Knowledge Quiz</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -95,40 +138,6 @@
     </div>
   </div>
 </div>
-      <!-- Card 2 - average -->
-      <div class="col-md-4 mb-4 text-center">
-        <div class="card rounded-4" style="width: 100%;">
-          <img src="assets/images/general-knowledge-average.webp" class="card-img-top rounded-top-4 border border-success" alt="General Knowledge" style="height: 300px; object-fit: cover;">
-          <div class="card-body rounded-bottom-4 border border-success">
-            <h3 class="card-title text-success">General Knowledge</h3>
-            <p class="card-text"><strong><span class="text-success">Average</span></strong> - Test your trivia across a variety of topics!</p>
-      <div class="star-rating mb-3 text-success" title="Easy Difficulty">
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-      </div>
-            <a href="#general-knowledge" class="btn btn-success">Start Quiz</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 - hard -->
-      <div class="col-md-4 mb-4 text-center">
-        <div class="card rounded-4" style="width: 100%;">
-          <img src="assets/images/general-knowledge-hard.webp" class="card-img-top rounded-top-4 border border-success" alt="General Knowledge" style="height: 300px; object-fit: cover;">
-          <div class="card-body rounded-bottom-4 border border-success">
-            <h3 class="card-title text-success">General Knowledge</h3>
-            <p class="card-text"><strong><span class="text-success">Hard</span></strong>- Test your trivia across a variety of topics!</p>
-      <div class="star-rating mb-3 text-success" title="Easy Difficulty">
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-      </div>
-            <a href="#general-knowledge" class="btn btn-success">Start Quiz</a>
-          </div>
-          
-        </div>
-      </div>
 </section>
 
           <!--Footer Section-->

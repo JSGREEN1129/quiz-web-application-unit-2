@@ -1,4 +1,3 @@
-// Questions for easy difficulty
 const questions = {
   easy: [
     {
@@ -16,8 +15,45 @@ const questions = {
       options: ["Square", "Triangle", "Circle"],
       answer: "Triangle"
     }
+  ],
+  average: [
+    {
+  question: "What planet is known as the Red Planet?",
+  options: ["Mars", "Jupiter", "Venus"],
+  answer: "Mars"
+},
+{
+  question: "What gas do plants absorb from the atmosphere?",
+  options: ["Oxygen", "Carbon Dioxide", "Nitrogen"],
+  answer: "Carbon Dioxide"
+},
+{
+  question: "Which ocean is the largest in the world?",
+  options: ["Atlantic", "Indian", "Pacific"],
+  answer: "Pacific"
+}
+
+  ],
+    hard: [
+{
+  question: "What is the powerhouse of the cell?",
+  options: ["Nucleus", "Mitochondria", "Ribosome"],
+  answer: "Mitochondria"
+},
+{
+  question: "Who developed the theory of general relativity?",
+  options: ["Isaac Newton", "Albert Einstein", "Nikola Tesla"],
+  answer: "Albert Einstein"
+},
+{
+  question: "What is the chemical symbol for gold?",
+  options: ["Au", "Ag", "Gd"],
+  answer: "Au"
+}
+
   ]
 };
+
 
 //Variables to track quiz state
 let currentDifficulty = '';
@@ -28,6 +64,8 @@ function startQuiz(difficulty) {
   currentDifficulty = difficulty;
   currentQuestionIndex = 0;
   score = 0;
+
+    document.getElementById('quizContent').innerHTML = '';
 
   const modalTitle = document.getElementById('quizModalLabel');
   modalTitle.textContent = `General Knowledge Quiz - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`;
