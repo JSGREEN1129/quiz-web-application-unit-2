@@ -1,25 +1,138 @@
 const questions = {
   generalKnowledge: {
+//General-Knowledge-easy question set
     easy: [
       {
-        question: "How many hours are there in a day?",
-        options: ["24", "12", "18"],
-        answer: "24"
+        question: "What is the capital city of France?",
+        options: ["Lyon", "Nice", "Paris"],
+        answer: "Paris"
+      },
+      { question: "What planet is known as the 'Red planet'?",
+        options: ["Venus", "Mars", "Jupiter"],
+        answer: "Mars"
+      },
+      { question: "What is the chemical symbol for water?",
+        options: ["H20", "CO2", "O2"],
+        answer: "H20"
+      },
+      { question: "How many continents are there?",
+        options: ["5", "6", "7"],
+        answer: "7"
+      },
+      { question: "What is the largest country by land area?",
+        options: ["Canada", "Russia", "USA"],
+        answer: "Russia"
+      },
+      { question: "Which fruit is known for keeping the doctor away?",
+        options: ["Banana", "Apple", "Orange"],
+        answer: "Apple"
+      },
+      { question: "What is the currency of Europe?",
+        options: ["Euro", "Pound", "Dollar"],
+        answer: "Euro"
+      },
+      { question: "Which animal is known as the 'King of the Jungle'?",
+        options: ["Tiger", "Lion", "Elephant"],
+        answer: "Lion"
+      },
+      { question: "Which city is known as the Big Apple?",
+        options: ["Los Angeles", "New York City", "Chicago"],
+        answer: "New York City"
+      },
+      { question: "Who discovered gravity?",
+        options: ["Albert Einstein", "Isaac Newton", "Galileo Galilei"],
+        answer: "Isaac Newton"
       }
     ],
+//General-Knowledge-average question set
     average: [
       {
         question: "Which ocean is the largest in the world?",
         options: ["Atlantic", "Indian", "Pacific"],
         answer: "Pacific"
+      },
+        { question: "What is the capital of Japan?",
+          options: ["Seoul", "Beijing", "Tokyo"],
+          answer: "Tokyo"
+      },
+        { question: "Who wrote the play 'Romeo and Juliet'?",
+          options: ["William Shakespeare", "Charles Dickens", "Jane Austen"],
+          answer: "William Shakespeare"
+      },
+        { question: "What is the largest continent by land area?",
+          options: ["Africa", "Asia", "Europe"],
+          answer: "Asia"
+      },
+        { question: "In which country would you find the Great Barrier Reef?",
+          options: ["Australia", "Brazil", "South Africa"],
+          answer: "Australia"
+      },
+        { question: "Which famous artist painted the 'Mona Lisa'?",
+          options: ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci"],
+          answer: "Leonardo da Vinci"
+      },
+        { question: "What is the largest mammal in the world?",
+          options: ["Elephant", "Blue Whale", "Giraffe"],
+          answer: "Blue Whale"
+      },
+
+        { question: "What is the smallest country in the world?",
+          options: ["Monaco", "Vatican City", "Nauru"],
+          answer: "Vatican City"
+      },
+        { question: "Which country is famous for producing Maple Syrup?",
+          options: ["USA", "Canada", "Norway"],
+          answer: "Canada"
+      },
+        { question: "Which gas makes up most of the Earth's atmosphere?",
+          options: ["Oxygen", "Carbon Dioxide", "Nitrogen"],
+          answer: "Nitrogen"
       }
     ],
+//General-Knowledge-hard question set
     hard: [
       {
         question: "What is the chemical symbol for gold?",
         options: ["Au", "Ag", "Gd"],
         answer: "Au"
-      }
+      },
+        { question: "Which element has the chemical symbol 'W'?",
+          options: ["Tungsten", "Wolfram", "Wolframium"],
+          answer: "Tungsten"
+      },
+        { question: "In which year did the Titanic sink?",
+          options: ["1912", "1905", "1920"],
+          answer: "1912"
+      },
+        { question: "Who wrote the novel 'One Hundred Years of Solitude'?",
+          options: ["Jorge Luis Borges", "Gabriel García Márquez", "Mario Vargas Llosa"],
+          answer: "Gabriel García Márquez"
+      },
+        { question: "What is the longest river in the world?",
+          options: ["Amazon River", "Nile River", "Yangtze River"],
+          answer: "Nile River"
+      },
+        { question: "Which artist painted the famous 'The Persistence of Memory'?",
+          options: ["Pablo Picasso", "Salvador Dalí", "Vincent van Gogh"],
+          answer: "Salvador Dalí"
+      },
+        { question: "Who was the first emperor of China?",
+          options: ["Qin Shi Huang", "Han Wudi", "Li Shimin"],
+          answer: "Qin Shi Huang"
+      },
+        { question: "Which planet is known as the 'Morning Star'?",
+          options: ["Mars", "Venus", "Mercury"],
+          answer: "Venus"
+      },
+        { question: "In which country was the first modern Olympic Games held?",
+          options: ["Greece", "France", "United States"],
+          answer: "Greece"
+      },
+        { question: "What is the capital of Mongolia?",
+          options: ["Ulaanbaatar", "Astana", "Tashkent"],
+          answer: "Ulaanbaatar"
+        }
+
     ]
   },
   history: {
@@ -201,20 +314,37 @@ function loadQuestion() {
     const maxTime = totalQuestions * 15;
     const timeUsedPercentage = (totalTimeSpent / maxTime) * 100;
     const timeRemainingPercentage = 100 - timeUsedPercentage;
+    const timeRemaining = 150 - totalTimeSpent;
 
     // Format total time for display
     const minutes = Math.floor(totalTimeSpent / 60);
     const seconds = totalTimeSpent % 60;
     const timeFormatted = minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
 
+    //Format total time for timeRemaining
+    const timeRemainingFormatted = `${timeRemaining}s`;
+
+
     quizContent.innerHTML = `
       <h4>Quiz Completed!</h4>
       <p>Your score: ${score} out of ${totalQuestions}</p>
       <div class="progress mt-2" style="height: 20px;">
-        <div class="progress-bar bg-success" role="progressbar" style="width: ${timeRemainingPercentage}%;" 
-             aria-valuenow="${timeRemainingPercentage}" aria-valuemin="0" aria-valuemax="100">
-          It took you: ${timeFormatted}
-        </div>
+  <div class="progress-bar bg-danger" role="progressbar" 
+       style="width: ${100 - timeRemainingPercentage}%" 
+       aria-valuenow="${100 - timeRemainingPercentage}" aria-valuemin="0" aria-valuemax="100">
+  </div>
+  
+  <!-- Green section for remaining time -->
+  <div class="progress-bar bg-success" role="progressbar" 
+       style="width: ${timeRemainingPercentage}%" 
+       aria-valuenow="${timeRemainingPercentage}" aria-valuemin="0" aria-valuemax="100">
+    <div>
+      Time remaining: ${timeRemainingFormatted}
+    </div>
+  </div>
+</div>
+      <div class="timeRemaining mt-2">          
+              It took you: ${timeFormatted}
       </div>
     `;
     // Stop the timer

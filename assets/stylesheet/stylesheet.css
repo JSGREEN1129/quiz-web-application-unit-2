@@ -36,3 +36,35 @@
 .progress-bar {
   font-size: 14px;
 }
+
+.answer-option {
+  display: inline-block;
+  padding: 15px;
+  margin: 10px 5px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100%;
+  text-align: center;
+}
+
+.answer-option:hover {
+  background-color: #e2e6ea;
+}
+
+.answer-option.selected {
+  background-color: #28a745; /* Green for selected */
+  color: white;
+}
+
+.answer-option.correct {
+  background-color: #28a745; /* Green for correct answer */
+  color: white;
+}
+
+.answer-option.incorrect {
+  background-color: #dc3545; /* Red for incorrect answer */
+  color: white;
+}
