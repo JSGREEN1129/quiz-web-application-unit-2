@@ -22,8 +22,8 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999; /* Higher than Bootstrap modal (1050) and navbar */
-  pointer-events: none; /* Allows clicks to pass through */
+  z-index: 9999;
+  pointer-events: none;
 }
 
 #timerDisplay i {
