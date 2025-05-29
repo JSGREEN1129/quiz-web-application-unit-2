@@ -1316,15 +1316,3 @@ function triggerConfetti() {
     ).innerHTML += `<p class="text-warning">Confetti animation failed to load.</p>`;
   }
 }
-
-// Reset timer when modal is closed
-const modalElement = document.querySelector("#quizModal");
-modalElement.addEventListener("hidden.bs.modal", () => {
-  if (timerInterval) clearInterval(timerInterval);
-  timeLeft = 15;
-  totalTimeSpent = 0;
-  document.getElementById(
-    "timerDisplay"
-  ).innerHTML = `<i class="fa-solid fa-stopwatch"></i> Time left: ${timeLeft}s`;
-  document.getElementById("submitBtn").disabled = false;
-});
