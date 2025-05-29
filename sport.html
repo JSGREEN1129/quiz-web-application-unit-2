@@ -115,27 +115,26 @@
         </div>
       </div>
 
-      <!-- Bootstrap Modal -->
-      <div class="modal fade" id="quizModal" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title text-success fw-bold" id="quizModalLabel">Sport Quiz</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div id="quizContent"></div>
-            </div>
-            <div class="modal-footer">
-              <span id="timerDisplay" class="me-auto"><i class="fa-solid fa-stopwatch"></i> Time left: 15s</span>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button id="submitBtn" type="button" class="btn btn-success">Submit Answer</button>
-            </div>
-          </div>
-        </div>
+  <!-- Bootstrap Modal -->
+<div class="modal fade" id="quizModal" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title text-success fw-bold" id="quizModalLabel">General Knowledge Quiz</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Quiz content will be dynamically loaded here -->
+        <div id="quizContent"></div>
+      </div>
+      <div class="modal-footer">
+        <button id="submitBtn" type="button" class="btn btn-success">Submit Answer</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <span id="timerDisplay" class="ms-auto"><i class="fa-solid fa-stopwatch ms-3"></i>Time left: 15s</span>
       </div>
     </div>
   </div>
+</div>
 </section>
 
           <!--Footer Section-->
