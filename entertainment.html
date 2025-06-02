@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>QuizHub</title>
+        <title>QuizLife</title>
         <meta name="description" content="Test your knowledge with a fun quiz every day! Enjoy fresh, daily trivia questions and challenge yourself to improve your score. How much do you really know?">
         <meta name="viewport" content="width=device-width, initial-scale=1">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
@@ -19,7 +19,7 @@
         <nav class="navbar sticky-top navbar-expand-md" style="background-color: #188754;">
           <div class="container-xxl">
             <a href="index.html" class="navbar-brand">
-              <h1 class="fw-bold text-success text-white">QuizHub</h1>
+              <h1 class="fw-bold text-success text-white">QuizLife</h1>
             </a>
             <!--Toggle Button for Navbar-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation"><span class ="navbar-toggler-icon"></span></button>
@@ -60,14 +60,15 @@
       <!-- Card 1 - easy -->
       <div class="col-md-4 mb-4 text-center">
         <div class="card rounded-4" style="width: 100%;">
-          <img src="assets/images/entertainment-easy.webp" class="card-img-top rounded-top-4 border border-success" alt="History" style="height: 300px; object-fit: cover;">
+          <img src="assets/images/entertainment-easy.webp" class="card-img-top rounded-top-4 border border-success" alt="entertainment-easy" style="height: 300px; object-fit: cover;">
           <div class="card-body rounded-bottom-4 border border-success">
-            <h3 class="card-title text-success">Entertainment</h3>
-            <p class="card-text"><strong><span class="text-success">Easy</span></strong> - Movies, music, and more fun facts await!</p>
-            <div class="star-rating mb-3 text-success" title="Easy Difficulty">
+                        <div class="star-rating mb-1 text-success" title="Easy Difficulty">
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
             </div>
+            <h3 class="card-title text-success">Entertainment</h3>
+            <p class="card-text"><strong><span class="text-success">Easy</span></strong> - Movies, music, and more fun facts await!</p>
+                                                            <!-- Button to trigger the modal -->
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#quizModal" onclick="startQuiz('entertainment', 'easy')">
               Start Quiz
             </button>
@@ -78,15 +79,16 @@
       <!-- Card 2 - average -->
       <div class="col-md-4 mb-4 text-center">
         <div class="card rounded-4" style="width: 100%;">
-          <img src="assets/images/entertainment-average.webp" class="card-img-top rounded-top-4 border border-success" alt="History" style="height: 300px; object-fit: cover;">
+          <img src="assets/images/entertainment-average.webp" class="card-img-top rounded-top-4 border border-success" alt="entertainment-average" style="height: 300px; object-fit: cover;">
           <div class="card-body rounded-bottom-4 border border-success">
-            <h3 class="card-title text-success">Entertainment</h3>
-            <p class="card-text"><strong><span class="text-success">Average</span></strong> - Movies, music, and more fun facts await!</p>
-            <div class="star-rating mb-3 text-success" title="Average Difficulty">
+                        <div class="star-rating mb-1 text-success" title="Average Difficulty">
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
             </div>
+            <h3 class="card-title text-success">Entertainment</h3>
+            <p class="card-text"><strong><span class="text-success">Average</span></strong> - Movies, music, and more fun facts await!</p>
+                                                                        <!-- Button to trigger the modal -->
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#quizModal" onclick="startQuiz('entertainment', 'average')">
               Start Quiz
             </button>
@@ -97,16 +99,17 @@
       <!-- Card 3 - hard -->
       <div class="col-md-4 mb-4 text-center">
         <div class="card rounded-4" style="width: 100%;">
-          <img src="assets/images/entertainment-hard.webp" class="card-img-top rounded-top-4 border border-success" alt="History" style="height: 300px; object-fit: cover;">
+          <img src="assets/images/entertainment-hard.webp" class="card-img-top rounded-top-4 border border-success" alt="entertainment-hard" style="height: 300px; object-fit: cover;">
           <div class="card-body rounded-bottom-4 border border-success">
-            <h3 class="card-title text-success">Entertainment</h3>
-            <p class="card-text"><strong><span class="text-success">Hard</span></strong> - Movies, music, and more fun facts await!</p>
-            <div class="star-rating mb-3 text-success" title="Hard Difficulty">
+                        <div class="star-rating mb-1 text-success" title="Hard Difficulty">
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
             </div>
+            <h3 class="card-title text-success">Entertainment</h3>
+            <p class="card-text"><strong><span class="text-success">Hard</span></strong> - Movies, music, and more fun facts await!</p>
+                                                                        <!-- Button to trigger the modal -->
             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#quizModal" onclick="startQuiz('entertainment', 'hard')">
               Start Quiz
             </button>
@@ -122,7 +125,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title text-success fw-bold" id="quizModalLabel">General Knowledge Quiz</h2>
+        <h2 class="modal-title text-success fw-bold" id="quizModalLabel">Entertainment Quiz</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -138,64 +141,56 @@
   </div>
 </div>
 
-          <!--Footer Section-->
-
-          <!--Left Column Content-->
-              <footer class="footer-section pt-5" style="background-color: #188754;">
-        <div class="container">
+      <!--Footer Section-->
+      <!--Left Column Content-->
+      <footer class="footer-section pt-5" style="background-color: #188754;">
+         <div class="container">
             <div class="row pb-5">
-                <div class="col-lg-4 mb-2">
-                    <div class="footer-brand mb-3 text-white">
-                        <h2 class="footer-title">QuizHub</h2>
-                    </div>
-                    <p class="company-desc text-white">We are dedicated to providing innovative solutions that transform businesses and enhance user experiences across digital platforms.</p>
-<div class="social-links mt-4">
-    <a href="https://www.facebook.com/" class="facebook-social-icon" aria-label="Facebook page" target="_blank" rel="noopener noreferrer">
-        <i class="bi bi-facebook text-white me-2"></i>
-    </a>
-    <a href="https://x.com/" class="x-social-icon" aria-label="X (formerly Twitter) page" target="_blank" rel="noopener noreferrer">
-        <i class="bi bi-twitter-x text-white me-2"></i>
-    </a>
-    <a href="https://uk.linkedin.com/" class="linkedin-social-icon" aria-label="LinkedIn page" target="_blank" rel="noopener noreferrer">
-        <i class="bi bi-linkedin text-white me-2"></i>
-    </a>
-    <a href="https://www.instagram.com/" class="instagram-social-icon" aria-label="Instagram page" target="_blank" rel="noopener noreferrer">
-        <i class="bi bi-instagram text-white me-2"></i>
-    </a>
-</div>
-                </div>
-                    <div class="col-lg-2">
-      <!-- Empty middle column -->
-    </div>
-
-              <!--Right Column Content-->
-
-<div class="col-lg-6 mb-2 text-white">
-  <h2 class="footer-title">Share Your Feedback and Opinion</h2>
-  <p class="feedback-desc">Please use the form below to share your feedback and opinion.</p>
-  
- <form id="feedback-form" method="POST" action="https://formdump.codeinstitute.net">
-    <div class="mb-3">
-      <label for="feedbackEmail" class="form-label">Email address</label>
-      <input type="email" name="email" class="form-control" id="feedbackEmail" placeholder="name@example.com" required>
-    </div>
-
-    <div class="mb-3">
-      <label for="feedbackText" class="form-label">Your Feedback and Opinion</label>
-      <textarea name="feedback" class="form-control" id="feedbackText" rows="4" placeholder="Write your feedback here..." required></textarea>
-    </div>
-
-    <div class="col-auto">
-      <button type="submit" class="btn mb-3" style="background-color: white; color: #188754;">
-        Submit Feedback
-      </button>
-    </div>
-  </form>
-</div>
-</div>
+               <div class="col-lg-4 mb-4 text-white">
+                  <div class="footer-brand mb-3">
+                     <h2 class="footer-title">QuizLife</h2>
+                  </div>
+                  <p class="company-desc text-white">Explore fun and educational quizzes on a wide range of topics. Test your knowledge, learn something new, and challenge your friends. We would like to hear your feedback to improve our quizzes and our website, please leave feedback using the feedback form in this footer.</p>
+                  <div class="social-links mt-4">
+                     <a href="https://www.facebook.com/" class="facebook-social-icon" aria-label="Facebook page" target="_blank" rel="noopener noreferrer">
+                     <i class="bi bi-facebook text-white me-2" aria-hidden="true"></i>
+                     </a>
+                     <a href="https://x.com/" class="x-social-icon" aria-label="X (formerly Twitter) page" target="_blank" rel="noopener noreferrer">
+                     <i class="bi bi-twitter-x text-white me-2" aria-hidden="true"></i>
+                     </a>
+                     <a href="https://uk.linkedin.com/" class="linkedin-social-icon" aria-label="LinkedIn page" target="_blank" rel="noopener noreferrer">
+                     <i class="bi bi-linkedin text-white me-2" aria-hidden="true"></i>
+                     </a>
+                     <a href="https://www.instagram.com/" class="instagram-social-icon" aria-label="Instagram page" target="_blank" rel="noopener noreferrer">
+                     <i class="bi bi-instagram text-white me-2" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+               <div class="col-lg-2 mb-4">
+                  <!-- Empty middle column -->
+               </div>
+               <!--Right Column Content-->
+               <div class="col-lg-6 mb-4 text-white">
+                  <h2 class="footer-title">Share Your Feedback and Opinion</h2>
+                  <p class="feedback-desc">Please use the form below to share your feedback and opinion.</p>
+                  <form id="feedback-form" method="POST" action="https://formdump.codeinstitute.net">
+                     <div class="mb-3">
+                        <label for="feedbackEmail" class="form-label">Email address</label>
+                        <input type="email" name="email" class="form-control" id="feedbackEmail" placeholder="name@example.com" required>
+                     </div>
+                     <div class="mb-3">
+                        <label for="feedbackText" class="form-label">Your Feedback and Opinion</label>
+                        <textarea name="feedback" class="form-control" id="feedbackText" rows="4" placeholder="Write your feedback here..." required></textarea>
+                     </div>
+                     <div class="col-auto">
+                        <button type="submit" class="btn mb-3" style="background-color: white; color: #188754;">
+                        Submit Feedback
+                        </button>
+                     </div>
+                  </form>
+               </div>
             </div>
-    </footer>
-        <!-- Bootstrap JS -->
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-    </body>
+         </div>
+      </footer>
+   </body>
 </html>
