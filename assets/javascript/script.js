@@ -1300,7 +1300,7 @@ function triggerConfetti() {
           y: 0.6,
         },
         colors: ["#28a745", "#ffffff", "#ffd700"],
-        duration: 3000,
+        duration: 30000,
       });
       // console.log('Confetti animation triggered successfully');
     } else {
