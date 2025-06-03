@@ -947,7 +947,7 @@ const questions = {
         answer: "Hockey",
       },
       {
-        question: "Which team won the 2020 FIFA World Cup?",
+        question: "Which team won the 2018 FIFA World Cup?",
         options: ["Brazil", "France", "Germany"],
         answer: "France",
       },
@@ -1114,178 +1114,131 @@ function startQuiz(topic, difficulty) {
   score = 0;
   timeLeft = 15;
   totalTimeSpent = 0;
-  //Clears any existing quiz content in the dynamic HTML
-  document.getElementById("quizContent").innerHTML = "";
+
+//Clears any existing quiz content in the dynamic HTML
+  $("#quizContent").empty();
   /*Updates the quiz modal title based on the
   user selected subject and difficulty*/
-  const modalTitle = document.getElementById("quizModalLabel");
-  modalTitle.textContent = `${toTitleCase(topic)} Quiz - ${toTitleCase(
-    difficulty
-  )}`;
+  $("#quizModalLabel").text(`${toTitleCase(topic)} Quiz - ${toTitleCase(difficulty)}`);
   //Reset submit button for a new quiz
-  const submitBtn = document.getElementById("submitBtn");
-  submitBtn.textContent = "Submit Answer";
-  submitBtn.classList.remove("d-none");
-  submitBtn.disabled = false;
-  submitBtn.removeEventListener("click", tryAgain);
-  submitBtn.addEventListener("click", submitAnswer);
-
-  if (timerInterval !== null) clearInterval(timerInterval);
+  const $submitBtn = $("#submitBtn");
+  $submitBtn.text("Submit Answer")
+            .removeClass("d-none")
+            .prop("disabled", false)
+            .off("click")
+            .on("click", submitAnswer);
+  if (timerInterval !== null) clearInterval (timerInterval);
   //Call for function to load the quiz
   loadQuestion();
 }
 
 function loadQuestion() {
-  const quizContent = document.getElementById("quizContent");
-  const submitBtn = document.getElementById("submitBtn");
-  const timerDisplay = document.getElementById("timerDisplay");
-  const totalQuestions = questions[currentTopic][currentDifficulty].length;
-  const question =
-    questions[currentTopic][currentDifficulty][currentQuestionIndex];
+const $quizContent = $("#quizContent");
+const $submitBtn = $("submitBtn");
+const $timerDisplay = $("#timerDisplay");
 
-  // Clear any existing timer
+const totalQuestions = questions[currentTopic][currentDifficulty].length;
+  const question = questions[currentTopic][currentDifficulty][currentQuestionIndex];
+
   if (timerInterval) clearInterval(timerInterval);
 
-  // Reset timer for the new question
   timeLeft = 15;
-  timerDisplay.innerHTML =
-  `<i class="fa-solid fa-stopwatch"></i> Time left: ${timeLeft}s`;
-  submitBtn.disabled = false;
+  $timerDisplay.html(`<i class="fa-solid fa-stopwatch"></i> Time left: ${timeLeft}s`);
+  $submitBtn.prop("disabled", false);
 
   if (!question) {
-    // Quiz completed
     const maxTime = totalQuestions * 15;
-    const timeUsedPercentage = (totalTimeSpent / maxTime) * 100;
-    const timeRemainingPercentage = 100 - timeUsedPercentage;
+    const timeRemainingPercentage = 100 - ((totalTimeSpent / maxTime) * 100);
     const timeRemaining = 150 - totalTimeSpent;
-
-    // Format total time for display
     const minutes = Math.floor(totalTimeSpent / 60);
     const seconds = totalTimeSpent % 60;
-    const timeFormatted =
-      minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
-
-    //Format total time for timeRemaining
+    const timeFormatted = minutes > 0 ? `${minutes}m ${seconds}s` : `${seconds}s`;
     const timeRemainingFormatted = `${timeRemaining}s`;
 
-    quizContent.innerHTML = `
+    $quizContent.html(`
       <h4>Quiz Completed!</h4>
       <p>Your score: ${score} out of ${totalQuestions}</p>
       <div class="progress mt-2" style="height: 20px;">
-  <div class="progress-bar bg-danger" role="progressbar"
-       style="width: ${100 - timeRemainingPercentage}%"
-       aria-valuenow="${100 - timeRemainingPercentage}"
-       aria-valuemin="0" aria-valuemax="100">
-  </div>
-  <div class="progress-bar bg-success" role="progressbar"
-      style="width: ${timeRemainingPercentage}%"
-      aria-valuenow="${timeRemainingPercentage}"
-      aria-valuemin="0" aria-valuemax="100">
-  <div>
-      Time remaining: ${timeRemainingFormatted}
-    </div>
-  </div>
-</div>
-  <div class="timeRemaining mt-2">
-              It took you: ${timeFormatted}
-  </div>
-    `;
-    // Stop the timer
-    clearInterval(timerInterval);
-    timerDisplay.innerHTML =
-    `<i class="fa-solid fa-stopwatch"></i> Quiz finished`;
+        <div class="progress-bar bg-danger" role="progressbar"
+          style="width: ${100 - timeRemainingPercentage}%" aria-valuenow="${100 - timeRemainingPercentage}" 
+          aria-valuemin="0" aria-valuemax="100">
+        </div>
+        <div class="progress-bar bg-success" role="progressbar"
+          style="width: ${timeRemainingPercentage}%" aria-valuenow="${timeRemainingPercentage}"
+          aria-valuemin="0" aria-valuemax="100">
+          <div>Time remaining: ${timeRemainingFormatted}</div>
+        </div>
+      </div>
+      <div class="timeRemaining mt-2">It took you: ${timeFormatted}</div>
+    `);
 
-    /* Change button to Try Again button if user
-    does not get all questions correct */
+    clearInterval(timerInterval);
+    $timerDisplay.html(`<i class="fa-solid fa-stopwatch"></i> Quiz finished`);
+
     if (score < totalQuestions) {
-      submitBtn.textContent = "Try Again";
-      submitBtn.removeEventListener("click", submitAnswer);
-      submitBtn.addEventListener("click", tryAgain);
+      $submitBtn.text("Try Again")
+                .off("click")
+                .on("click", tryAgain);
     } else {
-      // Perfect score: hide try again button and trigger confetti
-      submitBtn.classList.add("d-none");
-      quizContent.innerHTML +=
-      `<p class="text-success fw-bold mt-2">Perfect Score! 🎉</p>`;
+      $submitBtn.addClass("d-none");
+      $quizContent.append(`<p class="text-success fw-bold mt-2">Perfect Score! 🎉</p>`);
       triggerConfetti();
     }
 
     return;
   }
 
-  // Load next question
-  quizContent.innerHTML = `
-  <h4>Question ${currentQuestionIndex + 1}: ${question.question}</h4>
-  <form id="quizForm">
-  ${question.options
-    .map(function (option, index) {
-      return `
-  <div class="form-check">
-  <input type="radio" name="answer" id="option${index}" value="${option}" class="form-check-input">
-  <label class="form-check-label" for="option${index}">${option}</label>
-  </div>
-  `;
-    })
-    .join("")}
-  </form>
-`;
+  // Load question
+  const optionsHtml = question.options.map((opt, i) => `
+    <div class="form-check">
+      <input type="radio" name="answer" id="option${i}" value="${opt}" class="form-check-input">
+      <label class="form-check-label" for="option${i}">${opt}</label>
+    </div>
+  `).join("");
 
-  // Ensure submit button is visible and set to Submit Answer
-  submitBtn.textContent = "Submit Answer";
-  submitBtn.classList.remove("d-none");
+  $quizContent.html(`
+    <h4>Question ${currentQuestionIndex + 1}: ${question.question}</h4>
+    <form id="quizForm">${optionsHtml}</form>
+  `);
 
-  // Start the timer
+  $submitBtn.text("Submit Answer").removeClass("d-none");
+
   timerInterval = setInterval(() => {
     timeLeft--;
-    timerDisplay.innerHTML = `<i class="fa-solid fa-stopwatch"></i> Time left: ${timeLeft}s`;
-
+    $timerDisplay.html(`<i class="fa-solid fa-stopwatch"></i> Time left: ${timeLeft}s`);
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
-      timerDisplay.innerHTML = `<i class="fa-solid fa-stopwatch"></i> Time’s up!`;
-      submitBtn.disabled = true;
-
-      // Update total time spent (15 seconds since time ran out)
+      $timerDisplay.html(`<i class="fa-solid fa-stopwatch"></i> Time’s up!`);
+      $submitBtn.prop("disabled", true);
       totalTimeSpent += 15;
-
-      // Automatically move to the next question after a brief delay
       setTimeout(() => {
         currentQuestionIndex++;
         loadQuestion();
-      }, 1000); // 1-second delay before moving to the next question
+      }, 1000);
     }
-  }, 1000); // Update every second
+  }, 1000);
 }
 
 function submitAnswer() {
-  const form = document.getElementById("quizForm");
-  const selectedAnswer = form.querySelector('input[name="answer"]:checked');
+  const $form = $("#quizForm");
+  const selectedAnswer = $form.find('input[name="answer"]:checked').val();
 
   if (!selectedAnswer) {
     alert("Please select an answer!");
     return;
   }
 
-  // Check if the answer is correct
-  const correctAnswer =
-    questions[currentTopic][currentDifficulty][currentQuestionIndex].answer;
-  if (selectedAnswer.value === correctAnswer) {
-    score++;
-  }
+  const correctAnswer = questions[currentTopic][currentDifficulty][currentQuestionIndex].answer;
 
-  // Update total time spent (15 seconds minus remaining time)
+  if (selectedAnswer === correctAnswer) score++;
+
   totalTimeSpent += 15 - timeLeft;
-
-  // Clear the timer
   clearInterval(timerInterval);
-
-  // Move to the next question
   currentQuestionIndex++;
-
-  // Load the next question or show results
   loadQuestion();
 }
 
 function tryAgain() {
-  // Clear the timer
   if (timerInterval) clearInterval(timerInterval);
   startQuiz(currentTopic, currentDifficulty);
 }
@@ -1296,23 +1249,14 @@ function triggerConfetti() {
       confetti({
         particleCount: 1000,
         spread: 1000,
-        origin: {
-          y: 0.6,
-        },
+        origin: { y: 0.6 },
         colors: ["#28a745", "#ffffff", "#ffd700"],
         duration: 30000,
       });
-      // console.log('Confetti animation triggered successfully');
     } else {
-      // console.error('Confetti library not loaded');
-      document.getElementById(
-        "quizContent"
-      ).innerHTML += `<p class="text-warning">Confetti animation unavailable. Please check your internet connection.</p>`;
+      $("#quizContent").append(`<p class="text-warning">Confetti animation unavailable.</p>`);
     }
   } catch (error) {
-    // console.error('Error triggering confetti:', error);
-    document.getElementById(
-      "quizContent"
-    ).innerHTML += `<p class="text-warning">Confetti animation failed to load.</p>`;
+    $("#quizContent").append(`<p class="text-warning">Confetti animation failed to load.</p>`);
   }
 }
