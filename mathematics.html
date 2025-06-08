@@ -149,8 +149,8 @@
                <div class="col-lg-4 mb-4 text-white">
                   <div class="footer-brand mb-3">
                      <h2 class="footer-title">QuizLife</h2>
+                     <p class="company-desc text-white">Explore fun and educational quizzes on a wide range of topics. Test your knowledge, learn something new, and challenge your friends.</p>
                   </div>
-                  <p class="company-desc text-white">Explore fun and educational quizzes on a wide range of topics. Test your knowledge, learn something new, and challenge your friends. We would like to hear your feedback to improve our quizzes and our website, please leave feedback using the feedback form in this footer.</p>
                   <div class="social-links mt-4">
                      <a href="https://www.facebook.com/" class="facebook-social-icon" aria-label="Facebook page" target="_blank" rel="noopener noreferrer">
                      <i class="bi bi-facebook text-white me-2" aria-hidden="true"></i>
@@ -173,7 +173,7 @@
                <div class="col-lg-6 mb-4 text-white">
                   <h2 class="footer-title">Share Your Feedback and Opinion</h2>
                   <p class="feedback-desc">Please use the form below to share your feedback and opinion.</p>
-                  <form id="feedback-form" method="POST" action="https://formdump.codeinstitute.net">
+                  <form id="feedback-form" role=form method="POST" action="https://formdump.codeinstitute.net">
                      <div class="mb-3">
                         <label for="feedbackEmail" class="form-label">Email address</label>
                         <input type="email" name="email" class="form-control" id="feedbackEmail" placeholder="name@example.com" required>
@@ -183,9 +183,9 @@
                         <textarea name="feedback" class="form-control" id="feedbackText" rows="4" placeholder="Write your feedback here..." required></textarea>
                      </div>
                      <div class="col-auto">
-                        <button type="submit" class="btn mb-3" style="background-color: white; color: #188754;">
-                        Submit Feedback
-                        </button>
+                     <button type="submit" class="btn mb-3" style="background-color: white; color: #188754;" aria-label="Submit your feedback form">
+                     Submit Feedback
+                     </button>
                      </div>
                   </form>
                </div>
