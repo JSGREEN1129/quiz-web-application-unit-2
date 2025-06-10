@@ -23,42 +23,28 @@ Use the space below to discuss code validation for all of your own code files (*
 
 ### HTML
 
-⚠️ INSTRUCTIONS ⚠️
-
-1. [*recommended*] If you are using the live deployed site URLs, validate using this link: https://validator.w3.org/#validate_by_uri
-2. Otherwise, if you are copying/pasting your HTML code manually, use this link: https://validator.w3.org/#validate_by_input
-
-It's recommended to validate the live pages (all of them) using the deployed URL. This will give you a custom URL as well, which you can use below on your testing documentation. It makes it easier to return back to a page for validating it again in the future. The URL will look something like this:
-
-- https://validator.w3.org/nu/?doc=https://JSGREEN1129.github.io/quiz-web-application-unit-2/index.html
-
-⚠️ --- END --- ⚠️
-
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
-| Directory | File | URL | Screenshot | Notes |
-| --- | --- | --- | --- | --- |
-| MAIN | [index.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/index.html) | ![screenshot](./documentation/validation/index-html-validation-correct.png) | Notes (if applicable) |
-| MAIN | [general-knowledge.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/general-knowledge.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/general-knowledge.html) | ![screenshot](./documentation/validation/general-knowledge-html-validation-correct.png) | Notes (if applicable) |
-| MAIN | [history.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/history.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/history.html) | ![screenshot](./documentation/validation/history-html-validation-correct.png) | Notes (if applicable) |
-| MAIN | [science.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/science.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/science.html) | ![screenshot](./documentation/validation/science-html-validation-correct.png) | Notes (if applicable) |
-| MAIN | [mathematics.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/mathematics.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/mathematics.html) | ![screenshot](./documentation/validation/mathematics-html-validation-correct.png) | Notes (if applicable) |
-| MAIN | [entertainment.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/entertainment.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/entertainment.html) | ![screenshot](./documentation/validation/entertainment-html-validation-correct.png) | Notes (if applicable) |
-| MAIN | [sport.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/sport.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/sport.html) | ![screenshot](./documentation/validation/sport-html-validation-correct.png) | Notes (if applicable) |
+| Directory | File | URL | Screenshot |
+| --- | --- | --- | --- |
+| MAIN | [index.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/index.html) | ![screenshot](./documentation/validation/index-html-validation-correct.png) |
+| MAIN | [general-knowledge.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/general-knowledge.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/general-knowledge.html) | ![screenshot](./documentation/validation/general-knowledge-html-validation-correct.png) |
+| MAIN | [history.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/history.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/history.html) | ![screenshot](./documentation/validation/history-html-validation-correct.png) |
+| MAIN | [science.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/science.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/science.html) | ![screenshot](./documentation/validation/science-html-validation-correct.png) |
+| MAIN | [mathematics.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/mathematics.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/mathematics.html) | ![screenshot](./documentation/validation/mathematics-html-validation-correct.png) |
+| MAIN | [entertainment.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/entertainment.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/entertainment.html) | ![screenshot](./documentation/validation/entertainment-html-validation-correct.png) |
+| MAIN | [sport.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/sport.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/sport.html) | ![screenshot](./documentation/validation/sport-html-validation-correct.png) |
 
 
 ### CSS
 
-⚠️ INSTRUCTIONS ⚠️
-
-1. [*recommended*] If you are using the live deployed site, use this link: https://jigsaw.w3.org/css-validator/#validate_by_uri
-2. If you are copying/pasting your CSS code, use this link: https://jigsaw.w3.org/css-validator/#validate_by_input
-
-It's recommended to validate the live site for your primary CSS file on the deployed URL. This will give you a custom URL as well, which you can use below on your testing documentation. It makes it easier to return back to a page for validating it again in the future. The URL will look something like this:
-
 - https://jigsaw.w3.org/css-validator/validator?uri=https://jsgreen1129.github.io/quiz-web-application-unit-2
 
-If you have additional/multiple CSS files, then individual "[validation by input](https://jigsaw.w3.org/css-validator/#validate_by_input)" is recommended for the extra CSS files.
+### JAVASCRIPT
+
+| Directory | File | URL | Screenshot |
+| --- | --- | --- | --- |
+| ASSETS/javascript | [script.js](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/assets/javascript/script.js) | [JSLint Validator](https://www.jslint.com/) | ![screenshot](./documentation/validation/javascript-jslint-validation-correct.png) |
 
 **IMPORTANT**: Third-Party tools
 
