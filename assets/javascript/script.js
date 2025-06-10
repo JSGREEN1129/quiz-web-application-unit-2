@@ -2,7 +2,6 @@
 /*global $, jQuery, setInterval, clearInterval, setTimeout, document */
 /*global $,  alert, confetti, fetch, console */
 
-
 //Convert string into Title case format
 function toTitleCase(str) {
     return str.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase()).replace(/\s+/g, " ").trim();
@@ -40,8 +39,7 @@ function startQuiz(topic, difficulty) {
         `${toTitleCase(topic)} Quiz - ${toTitleCase(difficulty)}`
     );
     const $submitBtn = $("#submitBtn");
-    $submitBtn.text("Submit Answer").removeClass("d-none")
-    .prop("disabled", false).off("click").on("click", submitAnswer);
+    $submitBtn.text("Submit Answer").removeClass("d-none").prop("disabled", false).off("click").on("click", submitAnswer);
     if (timerInterval !== null) {
         clearInterval(timerInterval);
     }
@@ -54,9 +52,7 @@ function loadQuestion() {
     const $timerDisplay = $("#timerDisplay");
 
     const totalQuestions = questions[currentTopic][currentDifficulty].length;
-    const question = questions[currentTopic][currentDifficulty]
-    [currentQuestionIndex];
-
+    const question = questions[currentTopic][currentDifficulty][currentQuestionIndex];
     if (timerInterval) {
         clearInterval(timerInterval);
     }
@@ -167,8 +163,7 @@ function submitAnswer() {
         return;
     }
 
-    const correctAnswer = questions[currentTopic]
-    [currentDifficulty][currentQuestionIndex].answer;
+    const correctAnswer = questions[currentTopic][currentDifficulty][currentQuestionIndex].answer;
     if (selectedAnswer === correctAnswer) {
         score += 1;
     }
@@ -203,7 +198,7 @@ function triggerConfetti() {
                 `<p class="text-warning">Confetti animation unavailable.</p>`
             );
         }
-    } catch (error) {
+    } catch {
         $("#quizContent").append(
             `<p class="text-warning">Confetti animation failed to load.</p>`
         );
