@@ -3,117 +3,43 @@
 > [!NOTE]
 > Return back to the [README.md](README.md) file.
 
-⚠️ INSTRUCTIONS ⚠️
-
-In the following sections, you need to convince the assessors that you have conducted enough manual testing to legitimately believe that the site works well. Essentially, in this part, you should go over all of your project's features, and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-⚠️ --- END --- ⚠️
-
-## Code Validation
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use the space below to discuss code validation for all of your own code files (*where applicable*). You are not required to validate external libraries/frameworks.
-
-**MANDATORY**: You must provide a screenshot for each file you validate.
-
-**PRO TIP**: Where possible, always validate the live URL pages/files, not your local code using copy/paste. There could be subtle/hidden differences.
-
-⚠️ --- END --- ⚠️
-
 ### HTML
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
 
 | Directory | File | URL | Screenshot |
 | --- | --- | --- | --- |
-| MAIN | [index.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/index.html) | ![screenshot](./documentation/validation/index-html-validation-correct.png) |
-| MAIN | [general-knowledge.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/general-knowledge.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/general-knowledge.html) | ![screenshot](./documentation/validation/general-knowledge-html-validation-correct.png) |
-| MAIN | [history.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/history.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/history.html) | ![screenshot](./documentation/validation/history-html-validation-correct.png) |
-| MAIN | [science.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/science.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/science.html) | ![screenshot](./documentation/validation/science-html-validation-correct.png) |
-| MAIN | [mathematics.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/mathematics.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/mathematics.html) | ![screenshot](./documentation/validation/mathematics-html-validation-correct.png) |
-| MAIN | [entertainment.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/entertainment.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/entertainment.html) | ![screenshot](./documentation/validation/entertainment-html-validation-correct.png) |
-| MAIN | [sport.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/sport.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/sport.html) | ![screenshot](./documentation/validation/sport-html-validation-correct.png) |
-
-
-### CSS
-
-- https://jigsaw.w3.org/css-validator/validator?uri=https://jsgreen1129.github.io/quiz-web-application-unit-2
+| main | [index.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/index.html) | ![screenshot](./documentation/validation/index-html-validation-correct.png) |
+| main | [general-knowledge.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/general-knowledge.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/general-knowledge.html) | ![screenshot](./documentation/validation/general-knowledge-html-validation-correct.png) |
+| main | [history.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/history.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/history.html) | ![screenshot](./documentation/validation/history-html-validation-correct.png) |
+| main | [science.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/science.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/science.html) | ![screenshot](./documentation/validation/science-html-validation-correct.png) |
+| main | [mathematics.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/mathematics.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/mathematics.html) | ![screenshot](./documentation/validation/mathematics-html-validation-correct.png) |
+| main | [entertainment.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/entertainment.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/entertainment.html) | ![screenshot](./documentation/validation/entertainment-html-validation-correct.png) |
+| main | [sport.html](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/sport.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://jsgreen1129.github.io/quiz-web-application-unit-2/sport.html) | ![screenshot](./documentation/validation/sport-html-validation-correct.png) |
 
 ### JAVASCRIPT
 
 | Directory | File | URL | Screenshot |
 | --- | --- | --- | --- |
-| ASSETS/javascript | [script.js](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/assets/javascript/script.js) | [JSLint Validator](https://www.jslint.com/) | ![screenshot](./documentation/validation/javascript-jslint-validation-correct.png) |
+| assets/javascript | [script.js](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/assets/javascript/script.js) | [JSLint Validator](https://www.jslint.com/) | ![screenshot](./documentation/validation/javascript-jslint-validation-correct.png) |
 
-**IMPORTANT**: Third-Party tools
+### CSS
 
-If you're using external libraries/frameworks (e.g: Bootstrap, Materialize, Font Awesome, etc.), then sometimes the tool will attempt to also validate these, even though it's not part of your own actual code that you wrote. You are not required to validate the external libraries or frameworks!
-
-⚠️ --- END --- ⚠️
-
+- https://jigsaw.w3.org/css-validator/validator?uri=https://jsgreen1129.github.io/quiz-web-application-unit-2
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| assets | [stylesheet.css](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/assets/stylesheet/stylesheet.css) | [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https://jsgreen1129.github.io/quiz-web-application-unit-2) | ![screenshot](documentation/validation/css-assets-stylesheet.png) | Notes (if applicable) |
-
-
-### JavaScript
-
-⚠️ INSTRUCTIONS ⚠️
-
-If using modern JavaScript (ES6) methods, then make sure to include the following line at the very top of every single JavaScript file in your project (this should remain in your files for submission as well):
-
-`/* jshint esversion: 11 */`
-
-If you are also including jQuery (`$`), then the updated format will be:
-
-`/* jshint esversion: 11, jquery: true */`
-
-This allows the JShint validator to recognize modern ES6 methods, such as: `let`, `const`, `template literals`, `arrow functions (=>)`, etc.
-
-**IMPORTANT**: External resources
-
-Sometimes we'll write JavaScript that imports variables from other files, such as "an array of questions" from `questions.js`, which are used within the main `script.js` file elsewhere. If that's the case, the JShint validation tool doesn't know how to recognize "unused variables" that would normally be imported locally when running your own project. These warnings are acceptable, so showcase on your screenshot(s).
-
-The same thing applies when using external libraries such as Stripe, Leaflet, Bootstrap, Materialize, etc. To instantiate these components, we need to use their respective declarator. Again, the JShint validation tool would flag these as "undefined/unused variables". These warnings are acceptable, so showcase on your screenshot(s).
-
-⚠️ --- END --- ⚠️
-
-I have used the recommended [JShint Validator](https://jshint.com) to validate all of my JS files.
-
-| Directory | File | URL | Screenshot | Notes |
-| --- | --- | --- | --- | --- |
-| assets | [script.js](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/assets/javascript/script.js) | N/A | ![screenshot](documentation/validation/js-assets-script.png) | Notes (if applicable) |
-
+| assets | [stylesheet.css](https://github.com/JSGREEN1129/quiz-web-application-unit-2/blob/main/assets/stylesheet/stylesheet.css) | [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https://jsgreen1129.github.io/quiz-web-application-unit-2) | ![screenshot](./documentation/validation/stylesheet-validation-correct.png) | Notes (if applicable) |
 
 ## Responsiveness
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site on various device sizes.
-
-The minimum requirement is to test the following 3 sizes:
-
-- Mobile
-- Tablet
-- Desktop
-
-**IMPORTANT**: You must provide screenshots of your results, to "prove" that you've actually tested them.
-
-Using the [amiresponsive](http://ami.responsivedesign.is) mockup images (*or similar*) does not meet the requirements. Consider using some of the built-in device sizes from the Developer Tools.
-
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well. It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-⚠️ --- END --- ⚠️
 
 I've tested my deployed project to check for responsiveness issues.
 
 | Page | Mobile | Tablet | Desktop | Notes |
 | --- | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/responsiveness/mobile-home.png) | ![screenshot](documentation/responsiveness/tablet-home.png) | ![screenshot](documentation/responsiveness/desktop-home.png) | Works as expected |
-| Game | ![screenshot](documentation/responsiveness/mobile-game.png) | ![screenshot](documentation/responsiveness/tablet-game.png) | ![screenshot](documentation/responsiveness/desktop-game.png) | Works as expected |
+| Home | ![screenshot](./documentation/validation/mobile-responsive.png) | ![screenshot](./documentation/validation/tablet-responsive.png) | ![screenshot](./documentation/validation/laptop-responsive.png) | Works as expected |
+| topic selection | ![screenshot](./documentation/validation/topic-page-mobile-responsive.png) | ![screenshot](./documentation/validation/topic-page-tablet-responsive.png) | ![screenshot](./documentation/validation/topic-page-laptop-responsive.png) | Works as expected |
 | 404 | ![screenshot](documentation/responsiveness/mobile-404.png) | ![screenshot](documentation/responsiveness/tablet-404.png) | ![screenshot](documentation/responsiveness/desktop-404.png) | Works as expected |
 
 ## Browser Compatibility
