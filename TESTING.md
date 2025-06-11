@@ -47,7 +47,7 @@ I've tested my deployed project to check for responsiveness issues.
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
 | Browser | Index | Topic selection | Modal |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- |
 | Google | ![screenshot](./documentation/validation/google-chrome-browser.png) | ![screenshot](./documentation/validation/google-chrome-browser-topic-selection.png) | ![screenshot](./documentation/validation/laptop-responsive.png) | Works as expected |
 | Microsoft Edge | ![screenshot](./documentation/validation/microsoft-edge-browser.png) | ![screenshot](./documentation/validation/microsoft-edge-browser-topic-selection.png) | ![screenshot](./documentation/validation/topic-page-laptop-responsive.png) | Works as expected |
 | Opera | ![screenshot](./documentation/validation/opera-browser.png) | ![screenshot](./documentation/validation/opera-browser-topic-selection.png) | ![screenshot](./documentation/validation/topic-page-laptop-responsive.png) | Works as expected |
