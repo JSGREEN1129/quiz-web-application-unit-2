@@ -1,12 +1,20 @@
 /*global $, jQuery, setInterval, clearInterval, setTimeout, document */
-/*global $, jQuery, setInterval, clearInterval, setTimeout, document */
 /*global $,  alert, confetti, fetch, console */
+
+/**
+ * Interactive Quiz Application:
+ * Loads questions from JSON, manages user interaction,
+ * times responses, tracks score, and provides feedback
+ * with retry and celebration features.
+ */
 
 //Convert string into Title case format
 function toTitleCase(str) {
     return str.replace(/([A-Z])/g, " $1").replace(/^./, (str) => str.toUpperCase()).replace(/\s+/g, " ").trim();
 }
 
+/*Quiz variables - holds questions from JSON file, topic selection,
+difficulty selection, user score and user time calculation variable */
 let questions = {};
 let currentTopic = "";
 let currentDifficulty = "";
@@ -26,6 +34,7 @@ $.getJSON("questions.json").done(function (data) {
     alert("Could not load quiz questions.");
 });
 
+//Function to initiate the quiz state
 function startQuiz(topic, difficulty) {
     currentTopic = topic;
     currentDifficulty = difficulty;
@@ -46,6 +55,7 @@ function startQuiz(topic, difficulty) {
     loadQuestion();
 }
 
+//Function to load each individual question for the correct topic and correct difficulty
 function loadQuestion() {
     const $quizContent = $("#quizContent");
     const $submitBtn = $("#submitBtn");
@@ -53,6 +63,7 @@ function loadQuestion() {
 
     const totalQuestions = questions[currentTopic][currentDifficulty].length;
     const question = questions[currentTopic][currentDifficulty][currentQuestionIndex];
+    //Timer reset for each new question and timer calculation
     if (timerInterval) {
         clearInterval(timerInterval);
     }
@@ -76,7 +87,7 @@ function loadQuestion() {
             : `${seconds}s`
         );
         const timeRemainingFormatted = `${timeRemaining}s`;
-
+//Dynamically populate quiz modal with feedback components, stop quiz timer and show final quiz completion feedback
         $quizContent.html(`
       <h4>Quiz Completed!</h4>
       <p>Your score: ${score} out of ${totalQuestions}</p>
@@ -153,7 +164,7 @@ function loadQuestion() {
         }
     }, 1000);
 }
-
+//Submit answer through submit button
 function submitAnswer() {
     const $form = $("#quizForm");
     const selectedAnswer = $form.find("input[name='answer']:checked").val();
@@ -173,14 +184,14 @@ function submitAnswer() {
     currentQuestionIndex += 1;
     loadQuestion();
 }
-
+//Restart quiz from retry button
 function tryAgain() {
     if (timerInterval) {
         clearInterval(timerInterval);
     }
     startQuiz(currentTopic, currentDifficulty);
 }
-
+//Confetti celebration for a perfect score
 function triggerConfetti() {
     try {
         if (typeof confetti === "function") {
