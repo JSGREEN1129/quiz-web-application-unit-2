@@ -40,18 +40,25 @@ I've tested my deployed project to check for responsiveness issues.
 | --- | --- | --- | --- | --- |
 | Home | ![screenshot](./documentation/validation/mobile-responsive.png) | ![screenshot](./documentation/validation/tablet-responsive.png) | ![screenshot](./documentation/validation/laptop-responsive.png) | Works as expected |
 | topic selection | ![screenshot](./documentation/validation/topic-page-mobile-responsive.png) | ![screenshot](./documentation/validation/topic-page-tablet-responsive.png) | ![screenshot](./documentation/validation/topic-page-laptop-responsive.png) | Works as expected |
+| modal | ![screenshot](./documentation/validation/modal-mobile-responsive.png) | ![screenshot](./documentation/validation/modal-tablet-responsive.png) | ![screenshot](./documentation/validation/modal-laptop-responsive.png) | Works as expected |
 
 ## Browser Compatibility
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
+| Browser | Index | Topic selection | Modal |
+| --- | --- | --- | --- | --- |
+| Google | ![screenshot](./documentation/validation/google-chrome-browser.png) | ![screenshot](./documentation/validation/google-chrome-browser-topic-selection.png) | ![screenshot](./documentation/validation/laptop-responsive.png) | Works as expected |
+| Microsoft Edge | ![screenshot](./documentation/validation/microsoft-edge-browser.png) | ![screenshot](./documentation/validation/microsoft-edge-browser-topic-selection.png) | ![screenshot](./documentation/validation/topic-page-laptop-responsive.png) | Works as expected |
+| Opera | ![screenshot](./documentation/validation/opera-browser.png) | ![screenshot](./documentation/validation/opera-browser-topic-selection.png) | ![screenshot](./documentation/validation/topic-page-laptop-responsive.png) | Works as expected |
+
 - [Chrome - index page](./documentation/validation/google-chrome-browser.png)
 - [Edge - index page](./documentation/validation/microsoft-edge-browser.png)
 - [Opera - index page](./documentation/validation/opera-browser.png)
 
-- [Chrome - topic selection page](./documentation/validation/google-chrome-browser-topic-selection.png)
-- [Edge - topic selection page](./documentation/validation/microsoft-edge-browser-topic-selection.png)
-- [Opera - topic selection page](./documentation/validation/opera-browser-topic-selection.png)
+- [Chrome - topic selection page](./documentation/validation/google-chrome-browser.png)
+- [Edge - topic selection page](./documentation/validation/microsoft-edge-browser.png)
+- [Opera - topic selection page](./documentation/validation/opera-browser.png)
 
 ## Lighthouse Audit
 
