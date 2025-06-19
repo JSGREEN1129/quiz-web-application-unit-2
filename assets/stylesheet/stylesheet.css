@@ -13,14 +13,3 @@
  .navbar-toggler:focus {
      box-shadow: none;
  }
-
- a:focus,
- a:active {
-     outline: none;
-     border: none;
- }
-
- a {
-     text-decoration: none;
-     color: inherit;
- }
