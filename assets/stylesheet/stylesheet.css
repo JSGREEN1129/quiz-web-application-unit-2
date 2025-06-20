@@ -24,3 +24,29 @@
      text-decoration: none;
      color: inherit;
  }
+
+ body.error-page {
+     background-color: #1a1a1a;
+     color: #ffffff;
+ }
+
+ body.error-page .error-container {
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     text-align: center;
+     padding: 2rem;
+ }
+
+ body.error-page .error-code {
+     font-size: 6rem;
+     font-weight: bold;
+     color: #dc3545;
+ }
+
+ body.error-page .error-message {
+     font-size: 1.5rem;
+     margin-bottom: 1.5rem;
+ }
